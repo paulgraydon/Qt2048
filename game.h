@@ -9,7 +9,8 @@ class Game
 public:
     Game(int rowCount = 4, int colCount = 4);
     ~Game();
-    void setCell(int row, int col, int value);
+    void setCellValue(int row, int col, int value);
+    void spawnRandomCell();
     void gameInit();
     void moveUp();
     void moveDown();
@@ -21,6 +22,8 @@ private:
     int cols;
     int* gameScore;
     int** gameGrid;
+
+    int cellValueThr;
 };
 
 #endif // GAME_H

@@ -34,7 +34,7 @@ Game::~Game()
     }
 }
 
-void Game::setCell(int row, int col, int value)
+void Game::setCellValue(int row, int col, int value)
 {
     if ((row<0)||(col<0)||(row>rows)||(col>cols))
     {
@@ -45,24 +45,33 @@ void Game::setCell(int row, int col, int value)
     gameGrid[row][col]=value;
 }
 
-void Game::gameInit()
+void Game::spawnRandomCell()
 {
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> rowDistribution(0,rows);
-    std::uniform_int_distribution<int> colDistribution(0,cols);
-    std::uniform_real_distribution<double> valDistribution(0.0,1.0);
+    default_random_engine generator;
+    uniform_int_distribution<int> rowDistribution(0,rows);
+    uniform_int_distribution<int> colDistribution(0,cols);
+    uniform_real_distribution<double> valDistribution(0.0,1.0);
 
-    row1 = rowDistribution(generator);
-    row2 = rowDistribution(generator);
+    cellRow = rowDistribution(generator);
+    cellCol = colDistribution(generator);
 
-    col1 = colDistribution(generator);
-    col2 = colDistribution(generator);
-
-    while((row1 == row2)&&(col1 == col2))
+    while(gameGrid[cellRow][cellCol] != 0)
     {
-        row2 = rowDistribution(generator);
-        col2 = colDistribution(generator);
+        cellRow = rowDistribution(generator);
+        cellCol = colDistribution(generator);
     }
 
-    valueRand = valDistribution(generator);
+    valueProb = valDistribution(generator);
+    if (valueProb1 <= cellValueThr) cellValue = 4;
+    else cellValue = 2;
+
+    setCellValue(cellRow, cellCol, cellValue);
+}
+
+void Game::gameInit()
+{
+    *gameScore = 0;
+
+    spawnRandomCell();
+    spawnRandomCell();
 }
