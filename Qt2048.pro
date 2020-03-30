@@ -16,7 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         board.cpp \
         game.cpp \
-        main.cpp
+        main.cpp \
+        tile.cpp
 
 RESOURCES += qml.qrc
 
@@ -33,4 +34,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     board.h \
-    game.h
+    game.h \
+    tile.h

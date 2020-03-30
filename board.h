@@ -1,5 +1,6 @@
 #ifndef BOARD_H
 #define BOARD_H
+#include "tile.h"
 
 #include <QVector>
 #include <QString>
@@ -11,24 +12,30 @@ enum Direction {UP, DOWN, LEFT, RIGHT};
 class Board
 {
 public:
-    Board(int rows, int cols);
+    Board(int rowCount, int colCount, double valueThr = 0.25);
+    Board(const Board& otherBoard);
     ~Board();
 
     // Public methods accessed by Game class
-    void boardInit();
+    void resetBoard(); // Reset board to beginning game state
     Tile* getTile(int row, int col);
     void move(Direction dir);
-    void isFull();
+    bool isFull() const;
+    bool canMove() const;
 
 private:
     int rows;
     int cols;
-    QVector<QVector<Tile*>> gameBoard;
+    double valueThr; // Probability of spawning a 4 instead of a 2
+    QVector<QVector<Tile*>> tileBoard;
 
     // Private internal methods that change board state
     void initRandomTile();
+    void initBoard(); // Create empty board
     void moveVertically(int row, int col, Direction dir);
     void moveHorizontally(int row, int col, Direction dir);
+    void handleCollision(int collRow, int collCol); // Handle collision of two tiles
+    bool changedState(Board& otherBoard) const; // Check if board is different from the argument board
 };
 
 #endif // BOARD_H
