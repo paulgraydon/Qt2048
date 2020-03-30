@@ -1,29 +1,25 @@
 #ifndef GAME_H
 #define GAME_H
-#include <iostream>
-#include <random>
+
+#include "board.h"
 
 
 class Game
 {
 public:
-    Game(int rowCount = 4, int colCount = 4);
+    Game(int rows, int cols);
     ~Game();
-    void setCellValue(int row, int col, int value);
-    void spawnRandomCell();
-    void gameInit();
-    void moveUp();
-    void moveDown();
-    void moveLeft();
-    void moveRight();
-    void print();
+    Board* getGameBoard() const {return gameBoard;}
+    int getGameScore() const {return gameScore;}
+    void checkGameState();
+    bool gameWon();
+
 private:
     int rows;
     int cols;
-    int* gameScore;
-    int** gameGrid;
-
-    int cellValueThr;
+    Board* gameBoard;
+    int gameScore;
+    bool gameOver;
 };
 
 #endif // GAME_H
