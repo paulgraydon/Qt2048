@@ -30,15 +30,13 @@ void Game::move(Direction dir)
     if (!gameBoard->canMove()) gameOver = true;
 }
 
-bool Game::checkGameState()
+bool Game::isGameWon()
 {
-    for (int i = 0; i < gameBoard->getDimension(); ++i)
+    for (int i = 0; i < gameBoard->getRowCount(); i++)
     {
-        for (int j = 0; j < board->getDimension(); ++j)
-            if (board->getTile(i,j) != NULL && board->getTile(i,j)->getValue() == WINNING_VALUE)
+        for (int j = 0; j < gameBoard->getColCount(); j++)
+            if (gameBoard->getTile(i,j) != NULL && gameBoard->getTile(i,j)->getValue() == WIN_VALUE)
                 return true;
     }
-
-
     return false;
 }

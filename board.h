@@ -43,6 +43,7 @@ private:
     void moveHorizontally(int row, int col, Direction dir);
     void handleCollision(int collRow, int collCol); // Handle collision of two tiles
     bool changedState(Board& otherBoard) const; // Check if board is different from the argument board
+    void endCurrentMove(); // Reset some parameters before next move
 };
 
 #endif // BOARD_H

@@ -15,8 +15,9 @@ public:
     Board* getGameBoard() const {return gameBoard;}
     void move(Direction dir);
     int getGameScore() const {return gameScore;}
-    void checkGameState();
-    bool gameWon();
+    bool isGameOver(){return gameOver;}
+    bool isGameWon();
+
 
 private:
     Board* gameBoard;
