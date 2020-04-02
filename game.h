@@ -11,7 +11,9 @@ class Game
 public:
     Game(int rowCount = 4, int colCount = 4);
     ~Game();
+    void restartGame();
     Board* getGameBoard() const {return gameBoard;}
+    void move(Direction dir);
     int getGameScore() const {return gameScore;}
     void checkGameState();
     bool gameWon();
