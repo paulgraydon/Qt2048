@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Panneau.qml</file>
+        <file>Case.qml</file>
     </qresource>
 </RCC>
