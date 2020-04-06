@@ -1,6 +1,7 @@
 #ifndef TILE_H
 #define TILE_H
 
+
 #define VALUE_MULTIPLIER 2 // Define macro for tile value multiplication
 
 class Tile

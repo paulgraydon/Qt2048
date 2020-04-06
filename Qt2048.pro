@@ -17,6 +17,7 @@ SOURCES += \
         board.cpp \
         game.cpp \
         main.cpp \
+        qtile.cpp \
         tile.cpp
 
 RESOURCES += qml.qrc
@@ -35,4 +36,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     board.h \
     game.h \
+    qtile.h \
     tile.h

@@ -29,7 +29,7 @@ Rectangle {
     ListModel {
       id: gridModel
       ListElement {
-          value: 1
+          value: tileBoard[0][0].getValue();
           couleur: "#dcdcdc"
       }
       ListElement {

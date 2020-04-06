@@ -1,5 +1,5 @@
 #include "qtile.h"
 
-QTile::QTile(QObject *parent) : QObject(parent)
+Qtile::Qtile(QObject *parent) : QObject(parent)
 {
 }

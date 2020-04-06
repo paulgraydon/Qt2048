@@ -15,14 +15,14 @@ public:
     //Q_PROPERTY(QColor color MEMBER color NOTIFY colorValue)
     //Q_PROPERTY(QString value MEMBER value NOTIFY getValue)
 
-signals:
+//signals:
     //void colorValue();
     //int getValue();
 
 private:
-    //Tile* tileassociee;
+    Tile* tileassociee;
     //QColor color;
-    QString value;
+    //QString value;
 
 };
 
