@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>Panneau.qml</file>
         <file>Case.qml</file>
+        <file>Commande.qml</file>
     </qresource>
 </RCC>

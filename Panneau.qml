@@ -7,15 +7,17 @@ Rectangle {
     color: "#646464"
     radius: 5
 
+
+
     //property int emptyBlock: 16;
 
     GridView {
         id: grille;
-        keyNavigationWraps: true
+        //keyNavigationWraps: true
         cellHeight: 46
         cellWidth: 46
-        cacheBuffer: 320
-        interactive: true
+        //cacheBuffer: 320
+        //interactive: true
         anchors.fill: parent
         model: gridModel
 
