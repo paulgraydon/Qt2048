@@ -1,4 +1,5 @@
 #include "game.h"
+#include "board.h"
 
 Game::Game(int rowCount, int colCount)
 {
