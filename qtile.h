@@ -13,16 +13,16 @@ public:
     explicit Qtile(QObject *parent = nullptr);
 
     //Q_PROPERTY(QColor color MEMBER color NOTIFY colorValue)
-    //Q_PROPERTY(QString value MEMBER value NOTIFY getValue)
+    Q_PROPERTY(QString value MEMBER value NOTIFY getvalue)
 
-//signals:
-    //void colorValue();
-    //int getValue();
+signals:
+    //void colorchoice();
+    int getvalue();
 
 private:
     Tile* tileassociee;
     //QColor color;
-    //QString value;
+    int value;
 
 };
 

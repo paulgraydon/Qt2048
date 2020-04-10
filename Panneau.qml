@@ -8,7 +8,6 @@ Rectangle {
     radius: 5
 
 
-
     //property int emptyBlock: 16;
 
     GridView {
@@ -29,7 +28,7 @@ Rectangle {
     ListModel {
       id: gridModel
       ListElement {
-          value: tileBoard[0][0].getValue();
+          value: 1//tileBoard[0][0].getValue();
           couleur: "#dcdcdc"
       }
       ListElement {
