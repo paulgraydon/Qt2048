@@ -10,23 +10,10 @@ Window {
 
     Panneau {
         id: jeu
-        anchors.verticalCenterOffset: 25
-        anchors.horizontalCenterOffset: 0
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        scale: 1
-
     }
 
     Commande{
         id : panneaucommande
-        width: 188
-        height: 50
-        anchors.top: parent.top
-        anchors.topMargin: 30
-        anchors.horizontalCenterOffset: 0
-        anchors.horizontalCenter: parent.horizontalCenter
-        scale: 1
 
     }
 
