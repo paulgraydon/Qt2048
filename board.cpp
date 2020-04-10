@@ -249,6 +249,11 @@ void Board::resetBoard()
     initRandomTile();
 }
 
+Tile* Board::getTile(int row, int col)
+{
+    return tileBoard[row][col];
+}
+
 void Board::move(Direction dir)
 {
     Board boardCopy(*this);

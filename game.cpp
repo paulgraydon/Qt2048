@@ -35,7 +35,7 @@ bool Game::isGameWon()
     for (int i = 0; i < gameBoard->getRowCount(); i++)
     {
         for (int j = 0; j < gameBoard->getColCount(); j++)
-            //if (gameBoard->getTile(i,j) != NULL && gameBoard->getTile(i,j)->getValue() == WIN_VALUE)
+            if (gameBoard->getTile(i,j) != NULL && gameBoard->getTile(i,j)->getValue() == WIN_VALUE)
                 return true;
     }
     return false;
