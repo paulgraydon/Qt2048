@@ -12,14 +12,27 @@
 class Qtile: public QObject
 {
 
+    Q_OBJECT
+
 public:
     explicit Qtile(QObject *parent = nullptr);
-    Q_INVOKABLE void toStringCpp();
+
+    //Q_INVOKABLE void toStringCpp();
+
 
 signals:
+    void changementCPP(QString text);
+
+public slots:
+    void toStringCpp();
+
+private:
+    QString text;
+    int compteur = 0;
+
+//signals:
 
 //public slots:
-    //void toStringCpp();
 
 /*public:
     explicit Qtile(QObject *parent = nullptr);
