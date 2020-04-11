@@ -8,10 +8,9 @@
 #include "tile.h"
 
 
-
 class Qtile: public QObject
 {
-
+    Q_OBJECT
 public:
     explicit Qtile(QObject *parent = nullptr);
     Q_INVOKABLE void toStringCpp();

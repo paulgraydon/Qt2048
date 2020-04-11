@@ -10,5 +10,5 @@ Qtile::Qtile(QObject *parent) : QObject(parent)
 
 void Qtile::toStringCpp()
 {
-    qDebug() << "Hello C++ world ";
+    qDebug() << "Hello World!";
 }
