@@ -26,7 +26,7 @@ Window {
             id: button1
             x: 50
             y: 193
-            text: vueObjetCpt.cptQML
+            //text: vueObjetCpt.cptQML
             onClicked:
             {
                 vueObjetCpt.toStringCpp();
