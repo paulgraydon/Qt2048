@@ -254,6 +254,19 @@ Tile* Board::getTile(int row, int col)
     return tileBoard[row][col];
 }
 
+QString Board::getTileValue(int tileIndex)
+{
+    int tileRow;
+    int tileCol;
+    int tileValue;
+
+    tileRow = tileIndex/rows;
+    tileCol = tileIndex%rows;
+
+    tileValue = getTile(tileRow, tileCol)->getValue();
+    return(QString::number(tileValue));
+}
+
 void Board::move(Direction dir)
 {
     Board boardCopy(*this);

@@ -2,11 +2,15 @@
 #include <QQmlApplicationEngine>
 #include <QtQml>
 
+#include "game.h"
 #include "qtile.h"
 
 
 int main(int argc, char *argv[])
 {
+    Game game;
+    Board* gameBoard = game.getGameBoard();
+
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
