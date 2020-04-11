@@ -1,12 +1,14 @@
 #include "qtile.h"
+#include <QString>
+#include <QDebug>
 
 Qtile::Qtile(QObject *parent) : QObject(parent)
 {
+
 }
 
-int Qtile::getvalue()
-{
-    value = tileassociee->getValue();
-    return value;
 
+void Qtile::toStringCpp()
+{
+    qDebug() << "Hello C++ world ";
 }

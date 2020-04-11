@@ -2,6 +2,8 @@
 #define QTILE_H
 
 #include <QObject>
+#include <QDebug>
+#include <QString>
 
 #include "tile.h"
 
@@ -9,7 +11,17 @@
 
 class Qtile: public QObject
 {
+
 public:
+    explicit Qtile(QObject *parent = nullptr);
+    Q_INVOKABLE void toStringCpp();
+
+signals:
+
+//public slots:
+    //void toStringCpp();
+
+/*public:
     explicit Qtile(QObject *parent = nullptr);
 
     //Q_PROPERTY(QColor color MEMBER color NOTIFY colorValue)
@@ -22,7 +34,7 @@ signals:
 private:
     Tile* tileassociee;
     //QColor color;
-    int value;
+    int value;*/
 
 };
 
