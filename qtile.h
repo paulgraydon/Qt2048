@@ -18,6 +18,7 @@ public:
     explicit Qtile(QObject *parent = nullptr);
 
     //Q_INVOKABLE void toStringCpp();
+    Q_INVOKABLE QString readValue(int indice);
 
 
 signals:

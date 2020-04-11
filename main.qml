@@ -19,19 +19,6 @@ Window {
 
     Commande{
         id : panneaucommande
-
     }
-
-    Button {
-            id: button1
-            x: 50
-            y: 193
-            //text: vueObjetCpt.cptQML
-            onClicked:
-            {
-                vueObjetCpt.toStringCpp();
-            }
-        }
-
 
 }
