@@ -238,8 +238,10 @@ void Board::resetBoard()
     pointsScoredLastMove = 0;
     tileCollisionLastMove = false;
 
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
+    for (int i = 0; i < rows; ++i)
+    {
+        for (int j = 0; j < cols; ++j)
+        {
             delete tileBoard[i][j];
             tileBoard[i][j] = NULL;
         }
@@ -275,36 +277,36 @@ void Board::move(Direction dir)
 
     switch (dir) {
     case UP:
-        for (int i = 0; i < rows; ++i)
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < cols; ++j)
+            for (int j = 0; j < cols; j++)
             {
                 moveVertically(i, j, UP);
             }
         }
         break;
     case DOWN:
-        for (int i = rows-1; i >= 0; --i)
+        for (int i = rows-1; i >= 0; i--)
         {
-            for (int j = 0; j < cols; ++j)
+            for (int j = 0; j < cols; j++)
             {
                 moveVertically(i, j, DOWN);
             }
         }
         break;
     case LEFT:
-        for (int i = 0; i < rows; ++i)
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < cols; ++j)
+            for (int j = 0; j < cols; j++)
             {
                 moveHorizontally(i, j, LEFT);
             }
         }
         break;
     case RIGHT:
-        for (int i = 0; i < rows; ++i)
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = cols-1; j >= 0; --j)
+            for (int j = cols-1; j >= 0; j--)
             {
                 moveHorizontally(i, j, RIGHT);
             }
