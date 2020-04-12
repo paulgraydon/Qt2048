@@ -62,8 +62,6 @@ void Board::initRandomTile()
     double tileValue = valDistribution(generator);
     if (tileValue <= valueThr) tileBoard[tileRow][tileCol] = new Tile(4);
     else tileBoard[tileRow][tileCol] = new Tile(2);
-    qDebug() << "dans initRandomtile";
-    qDebug() << tileBoard;
 }
 
 void Board::initBoard()
@@ -258,9 +256,6 @@ void Board::resetBoard()
 
 Tile* Board::getTile(int row, int col)
 {
-    qDebug() << "Board:getTile, affiche tileBoard";
-    qDebug() << tileBoard;
-
     return tileBoard[row][col];
 }
 
@@ -283,8 +278,9 @@ QString Board::getTileValue(int tileIndex)
 
 void Board::move(Direction dir)
 {
+    qDebug()<< "Dans Board::move";
     Board boardCopy(*this);
-
+    qDebug()<< "Dans Board::move après copie";
     endCurrentMove();
 
     switch (dir) {

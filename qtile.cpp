@@ -21,7 +21,22 @@ QString Qtile::readValue(int index)
     return (qValue);
 }
 
-void Qtile::performMove(Direction dir)
+void Qtile::performMove(int direction)
 {
-    currentGame->move(dir);
+    qDebug()<< "Je bouge";
+    qDebug()<< direction;
+    if (direction == 1){
+        currentGame->move(UP);
+    }
+    if (direction == 2){
+        currentGame->move(DOWN);
+    }
+    if (direction == 3){
+        currentGame->move(LEFT);
+    }
+    if (direction == 4){
+        currentGame->move(RIGHT);
+    }
+    qDebug()<< "Je bouge";
+    qDebug()<< direction;
 }

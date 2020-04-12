@@ -21,7 +21,7 @@ public:
     //Q_INVOKABLE void toStringCpp();
     void setCurrentGame(Game* newGame) {currentGame = newGame;}
     Q_INVOKABLE QString readValue(int index);
-    void performMove(Direction dir);
+    Q_INVOKABLE void performMove(int direction);
 
 signals:
     void changementCPP(QString text);
