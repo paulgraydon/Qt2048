@@ -34,6 +34,20 @@ Rectangle
             font.pixelSize: 24
         }
     }
+
+    function caseUpdate()
+    {
+        casenum.text = vueObjetCpt.readValue(num)
+    }
+
+    Connections
+    {
+        target: window
+        onUpdate:
+        {
+            caseUpdate();
+        }
+    }
 }
 
 
