@@ -6,6 +6,8 @@
 #include <QString>
 #include <QDebug>
 
+using namespace std;
+
 class Tile;
 
 enum Direction {UP, DOWN, LEFT, RIGHT};
@@ -13,7 +15,7 @@ enum Direction {UP, DOWN, LEFT, RIGHT};
 class Board
 {
 public:
-    Board(int rowCount, int colCount, double valueThr = 0.25);
+    Board(int rowCount, int colCount, double valueThr = 0.3);
     Board(const Board& otherBoard);
     ~Board();
 

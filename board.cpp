@@ -1,6 +1,6 @@
 #include "board.h"
-#include <random>
 #include <iostream>
+#include <random>
 #include <stdlib.h>
 #include <time.h>
 
@@ -52,7 +52,7 @@ Board::~Board()
 
 void Board::initRandomTile()
 {
-    default_random_engine generator;
+    static default_random_engine generator(time(NULL));
     uniform_real_distribution<double> valDistribution(0.0,1.0);
 
     int tileRow, tileCol;
@@ -63,7 +63,7 @@ void Board::initRandomTile()
     } while (tileBoard[tileRow][tileCol] != NULL);
 
     double tileValue = valDistribution(generator);
-    if (tileValue >= valueThr) tileBoard[tileRow][tileCol] = new Tile(4);
+    if (tileValue <= valueThr) tileBoard[tileRow][tileCol] = new Tile(4);
     else tileBoard[tileRow][tileCol] = new Tile(2);
 }
 
