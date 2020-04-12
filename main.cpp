@@ -11,6 +11,8 @@ int main(int argc, char *argv[])
     Game game(4, 4);
     Board* board = game.getGameBoard();
 
+    game.restartGame();
+
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
