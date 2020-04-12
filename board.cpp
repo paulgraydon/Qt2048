@@ -268,8 +268,12 @@ QString Board::getTileValue(int tileIndex)
     tileRow = tileIndex/rows;
     tileCol = tileIndex%rows;
 
-    tileValue = getTile(tileRow, tileCol)->getValue();
-    return(QString::number(tileValue));
+    if (tileBoard[tileRow][tileCol] == NULL) return QString();
+    else
+    {
+        tileValue = getTile(tileRow, tileCol)->getValue();
+        return(QString::number(tileValue));
+    }
 }
 
 void Board::move(Direction dir)
