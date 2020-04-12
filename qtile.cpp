@@ -15,8 +15,9 @@ void Qtile::toStringCpp()
     //qDebug() << "Hello World!";
 }
 
-Q_INVOKABLE QString Qtile::readValue(int index)
+QString Qtile::readValue(int index)
 {
+    //qDebug() << "Hello World!";
     Board* board = currentGame.getGameBoard();
     return (board->getTileValue(index));
 }
