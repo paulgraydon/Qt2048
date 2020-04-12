@@ -1,4 +1,5 @@
 #include "game.h"
+#include "qtile.h"
 
 Game::Game(int rowCount, int colCount)
 {
@@ -28,7 +29,13 @@ void Game::move(Direction dir)
     if (gameBoard->getTileCollisionLastMove()) gameScore += gameBoard->getPointsScoredLastMove();
 
     // Game over if no move is possible
-    if (!gameBoard->canMove()) gameOver = true;
+    if (!gameBoard->canMove())
+    {
+        gameOver = true;
+        bool gameWon = isGameWon();
+        if (gameWon) emit ChangeWinStatus();
+        else emit ChangeLoseStatus();
+    }
 }
 
 bool Game::isGameWon()

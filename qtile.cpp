@@ -69,14 +69,14 @@ void Qtile::performMove(int direction)
 }
 
 
-bool Qtile::GameisWon()
+bool Qtile::GameIsWon()
 {
-    gameiswon = currentGame->isGameWon();
-    return gameiswon;
+    gameIsWon = currentGame->isGameWon();
+    return gameIsWon;
 }
 
-bool Qtile::GameisLost()
+bool Qtile::GameIsLost()
 {
-    gameislost = currentGame->isGameOver();
-    return gameislost;
+    gameIsLost = currentGame->isGameOver();
+    return gameIsLost;
 }
