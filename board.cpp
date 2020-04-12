@@ -48,8 +48,8 @@ Board::~Board()
 void Board::initRandomTile()
 {
     default_random_engine generator;
-    uniform_int_distribution<int> rowDistribution(0,rows);
-    uniform_int_distribution<int> colDistribution(0,cols);
+    uniform_int_distribution<int> rowDistribution(0,rows-1);
+    uniform_int_distribution<int> colDistribution(0,cols-1);
     uniform_real_distribution<double> valDistribution(0.0,1.0);
 
     int tileRow, tileCol;
