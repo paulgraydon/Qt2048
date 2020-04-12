@@ -60,6 +60,18 @@ Rectangle {
             }
         }
     }
+
+
+    Win{
+        id:gamewon
+        visible:false
+    }
+
+    Lose{
+        id:gamelost
+        visible:false
+    }
+
 }
 
 

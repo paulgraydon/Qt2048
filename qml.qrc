@@ -4,5 +4,7 @@
         <file>Panneau.qml</file>
         <file>Case.qml</file>
         <file>Commande.qml</file>
+        <file>Win.qml</file>
+        <file>Lose.qml</file>
     </qresource>
 </RCC>
