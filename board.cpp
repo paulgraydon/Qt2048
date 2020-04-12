@@ -8,6 +8,9 @@ Board::Board(int rowCount, int colCount, double valueThresh)
     rows = rowCount;
     cols = colCount;
     valueThr = valueThresh;
+    pointsScoredLastMove = 0;
+    tileCollisionLastMove = false;
+    initBoard();
 }
 
 Board::Board(const Board& otherBoard)
