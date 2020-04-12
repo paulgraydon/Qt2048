@@ -17,6 +17,8 @@ Board::Board(const Board& otherBoard)
 {
     rows = otherBoard.rows;
     cols = otherBoard.cols;
+    valueThr = otherBoard.valueThr;
+    initBoard();
     for (int i=0; i < rows; i++)
     {
         for (int j=0; j < cols; j++)
