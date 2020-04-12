@@ -11,8 +11,6 @@ Board::Board(int rowCount, int colCount, double valueThresh)
     pointsScoredLastMove = 0;
     tileCollisionLastMove = false;
     initBoard();
-    qDebug() << "dans le constructeur Board, affiche tileBoard";
-    qDebug() << tileBoard;
 }
 
 Board::Board(const Board& otherBoard)
@@ -64,6 +62,8 @@ void Board::initRandomTile()
     double tileValue = valDistribution(generator);
     if (tileValue <= valueThr) tileBoard[tileRow][tileCol] = new Tile(4);
     else tileBoard[tileRow][tileCol] = new Tile(2);
+    qDebug() << "dans initRandomtile";
+    qDebug() << tileBoard;
 }
 
 void Board::initBoard()

@@ -13,6 +13,8 @@ Window {
     height: 400
     title: qsTr("2048")
 
+    signal update()
+
     Panneau {
         id: jeu
     }
