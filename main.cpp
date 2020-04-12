@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QtQml>
+#include <stdlib.h>
+#include <time.h>
 
 #include "game.h"
 #include "board.h"
@@ -8,8 +10,11 @@
 #include "qtile.h"
 
 
+
 int main(int argc, char *argv[])
 {
+    srand(time(NULL));
+
     Game game(4, 4);
     Game* gamePtr = &game;
 

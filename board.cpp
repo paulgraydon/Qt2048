@@ -1,5 +1,8 @@
 #include "board.h"
 #include <random>
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -50,19 +53,17 @@ Board::~Board()
 void Board::initRandomTile()
 {
     default_random_engine generator;
-    uniform_int_distribution<int> rowDistribution(0,rows-1);
-    uniform_int_distribution<int> colDistribution(0,cols-1);
     uniform_real_distribution<double> valDistribution(0.0,1.0);
 
     int tileRow, tileCol;
     do
     {
-        tileRow = rowDistribution(generator);
-        tileCol = colDistribution(generator);
+        tileRow = rand() % rows;
+        tileCol = rand() % cols;
     } while (tileBoard[tileRow][tileCol] != NULL);
 
     double tileValue = valDistribution(generator);
-    if (tileValue <= valueThr) tileBoard[tileRow][tileCol] = new Tile(4);
+    if (tileValue >= valueThr) tileBoard[tileRow][tileCol] = new Tile(4);
     else tileBoard[tileRow][tileCol] = new Tile(2);
 }
 
