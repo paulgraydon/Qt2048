@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QString>
 
+#include "game.h"
+#include "board.h"
 #include "tile.h"
 
 
@@ -18,8 +20,8 @@ public:
     explicit Qtile(QObject *parent = nullptr);
 
     //Q_INVOKABLE void toStringCpp();
-    Q_INVOKABLE QString readValue(int indice);
-
+    void setCurrentGame(Game newGame) {currentGame = newGame;}
+    Q_INVOKABLE QString readValue(int index);
 
 signals:
     void changementCPP(QString text);
@@ -49,6 +51,9 @@ private:
     Tile* tileassociee;
     //QColor color;
     int value;*/
+
+private:
+    Game currentGame;
 
 };
 

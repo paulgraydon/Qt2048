@@ -21,7 +21,7 @@ public:
     int getRowCount() {return rows;}
     int getColCount() {return cols;}
     Tile* getTile(int row, int col);
-    QString getTileValue(int tileIndex);
+    QString getTileValue(int tileIndex); // Return tile value by index, under form of a QString
     void move(Direction dir);
     bool isFull() const;
     int getPointsScoredLastMove() const {return pointsScoredLastMove;}

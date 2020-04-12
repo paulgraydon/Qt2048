@@ -8,13 +8,13 @@
 
 int main(int argc, char *argv[])
 {
-    Game game;
-    Board* gameBoard = game.getGameBoard();
+    Game game(4, 4);
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
     Qtile aQtile;
+    aQtile.setCurrentGame(game);
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
