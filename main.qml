@@ -17,6 +17,27 @@ Window {
 
     Panneau {
         id: jeu
+
+        Keys.onPressed: {
+            switch (event.key) {
+            case Qt.Key_Up:
+                vueObjetCpt.move(UP);
+                window.update();
+                break;
+            case Qt.Key_Down:
+                vueObjetCpt.move(DOWN);
+                window.update();
+                break;
+            case Qt.Key_Left:
+                vueObjetCpt.move(LEFT);
+                window.update();
+                break;
+            case Qt.Key_Right:
+                vueObjetCpt.move(RIGHT);
+                window.update();
+                break;
+            }
+        }
     }
 
     Commande{
