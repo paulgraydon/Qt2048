@@ -67,3 +67,16 @@ void Qtile::performMove(int direction)
     qDebug()<< "Je bouge";
     qDebug()<< direction;
 }
+
+
+bool Qtile::GameisWon()
+{
+    gameiswon = currentGame->isGameWon();
+    return gameiswon;
+}
+
+bool Qtile::GameisLost()
+{
+    gameislost = currentGame->isGameOver();
+    return gameislost;
+}

@@ -16,17 +16,29 @@ class Qtile: public QObject
 {
     Q_OBJECT
 
+    bool gameiswon;
+    bool gameislost;
+    Q_PROPERTY(bool gameiswon READ GameisWon NOTIFY ChangeWinStatus)
+    Q_PROPERTY(bool gameislost READ GameisLost NOTIFY ChangeLoseStatus)
+
+
 public:
     explicit Qtile(QObject *parent = nullptr);
 
     //Q_INVOKABLE void toStringCpp();
     void setCurrentGame(Game* newGame) {currentGame = newGame;}
+
     Q_INVOKABLE QString readValue(int index);
     Q_INVOKABLE void performMove(int direction);
     Q_INVOKABLE QColor readColor(int index);
 
+    bool GameisWon();
+    bool GameisLost();
+
 signals:
     void changementCPP(QString text);
+    void ChangeWinStatus();
+    void ChangeLoseStatus();
 
 public slots:
     void toStringCpp();
