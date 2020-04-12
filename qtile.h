@@ -13,14 +13,13 @@
 
 class Qtile: public QObject
 {
-
     Q_OBJECT
 
 public:
     explicit Qtile(QObject *parent = nullptr);
 
     //Q_INVOKABLE void toStringCpp();
-    void setCurrentGame(Game newGame) {currentGame = newGame;}
+    void setCurrentBoard(Board* newBoard) {currentBoard = newBoard;}
     Q_INVOKABLE QString readValue(int index);
 
 signals:
@@ -53,7 +52,7 @@ private:
     int value;*/
 
 private:
-    Game currentGame;
+    Board* currentBoard;
 
 };
 
