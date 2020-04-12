@@ -3,13 +3,15 @@
 #include <QtQml>
 
 #include "game.h"
+#include "board.h"
+#include "tile.h"
 #include "qtile.h"
 
 
 int main(int argc, char *argv[])
 {
     Game game(4, 4);
-    Board* board = game.getGameBoard();
+    Game* gamePtr = &game;
 
     game.restartGame();
 
@@ -17,7 +19,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     Qtile aQtile;
-    aQtile.setCurrentBoard(board);
+    aQtile.setCurrentGame(gamePtr);
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

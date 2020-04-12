@@ -17,6 +17,11 @@ void Qtile::toStringCpp()
 
 QString Qtile::readValue(int index)
 {
-    QString qValue = currentBoard->getTileValue(index);
+    QString qValue = currentGame->getGameBoard()->getTileValue(index);
     return (qValue);
+}
+
+void Qtile::performMove(Direction dir)
+{
+    currentGame->move(dir);
 }

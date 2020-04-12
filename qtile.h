@@ -19,8 +19,9 @@ public:
     explicit Qtile(QObject *parent = nullptr);
 
     //Q_INVOKABLE void toStringCpp();
-    void setCurrentBoard(Board* newBoard) {currentBoard = newBoard;}
+    void setCurrentGame(Game* newGame) {currentGame = newGame;}
     Q_INVOKABLE QString readValue(int index);
+    void performMove(Direction dir);
 
 signals:
     void changementCPP(QString text);
@@ -52,7 +53,7 @@ private:
     int value;*/
 
 private:
-    Board* currentBoard;
+    Game* currentGame;
 
 };
 
