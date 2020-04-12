@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QDebug>
 #include <QString>
+#include <QColor>
 
 #include "game.h"
 #include "board.h"
@@ -22,6 +23,7 @@ public:
     void setCurrentGame(Game* newGame) {currentGame = newGame;}
     Q_INVOKABLE QString readValue(int index);
     Q_INVOKABLE void performMove(int direction);
+    Q_INVOKABLE QColor readColor(int index);
 
 signals:
     void changementCPP(QString text);

@@ -278,6 +278,23 @@ QString Board::getTileValue(int tileIndex)
     }
 }
 
+int Board::getTileValueforColor(int tileIndex)
+{
+    int tileRow;
+    int tileCol;
+    int tileValue;
+
+    tileRow = tileIndex/rows;
+    tileCol = tileIndex%rows;
+
+    if (tileBoard[tileRow][tileCol] == NULL) return(0);
+    else
+    {
+        tileValue = getTile(tileRow, tileCol)->getValue();
+        return(tileValue);
+    }
+}
+
 void Board::move(Direction dir)
 {
     qDebug()<< "Dans Board::move";

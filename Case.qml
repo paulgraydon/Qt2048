@@ -12,7 +12,7 @@ Rectangle
     {
         id: fondcase
         anchors.fill: parent
-        color: "#ccc0b2"
+        color: vueObjetCpt.readColor(num) //"#ccc0b2"
         radius: 3
         anchors.rightMargin: 4
         anchors.leftMargin: 4
@@ -38,6 +38,7 @@ Rectangle
     function caseUpdate()
     {
         casenum.text = vueObjetCpt.readValue(num)
+        fondcase.color = vueObjetCpt.readColor(num)
     }
 
     Connections
