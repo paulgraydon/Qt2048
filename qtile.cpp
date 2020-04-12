@@ -17,7 +17,8 @@ void Qtile::toStringCpp()
 
 QString Qtile::readValue(int index)
 {
-    //qDebug() << "Hello World!";
+
     Board* board = currentGame.getGameBoard();
+    qDebug() << "Passage dans Qtile::readValue";
     return (board->getTileValue(index));
 }

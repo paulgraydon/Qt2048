@@ -11,6 +11,8 @@ Board::Board(int rowCount, int colCount, double valueThresh)
     pointsScoredLastMove = 0;
     tileCollisionLastMove = false;
     initBoard();
+    qDebug() << "dans le constructeur Board, affiche tileBoard";
+    qDebug() << tileBoard;
 }
 
 Board::Board(const Board& otherBoard)
@@ -256,6 +258,9 @@ void Board::resetBoard()
 
 Tile* Board::getTile(int row, int col)
 {
+    qDebug() << "Board:getTile, affiche tileBoard";
+    qDebug() << tileBoard;
+
     return tileBoard[row][col];
 }
 
@@ -267,8 +272,8 @@ QString Board::getTileValue(int tileIndex)
 
     tileRow = tileIndex/rows;
     tileCol = tileIndex%rows;
-
     tileValue = getTile(tileRow, tileCol)->getValue();
+
     return(QString::number(tileValue));
 }
 

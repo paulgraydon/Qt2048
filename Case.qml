@@ -25,7 +25,7 @@ Rectangle
             x: 30
             y: 30
 
-            text: num
+            text: vueObjetCpt.readValue(num)
 
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
