@@ -24,9 +24,9 @@ QString Qtile::readValue(int index)
 
 QColor Qtile::readColor(int index)
 {
-    int valueforcolor = currentGame->getGameBoard()->getTileValueforColor(index);
+    int valueForColor = currentGame->getGameBoard()->getTileValueForColor(index);
     QColor color;
-    switch(valueforcolor)
+    switch(valueForColor)
     {
         case 0: color = "#ccc0b2"; break;
         case 2: color = "#F4ECE4"; break;

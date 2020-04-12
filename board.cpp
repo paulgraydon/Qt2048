@@ -279,7 +279,7 @@ QString Board::getTileValue(int tileIndex)
     }
 }
 
-int Board::getTileValueforColor(int tileIndex)
+int Board::getTileValueForColor(int tileIndex)
 {
     int tileRow;
     int tileCol;
