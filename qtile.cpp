@@ -2,9 +2,11 @@
 #include <QString>
 #include <QDebug>
 
+#include "game.h"
+
 Qtile::Qtile(QObject *parent) : QObject(parent)
 {
-
+    currentGame = new Game;
 }
 
 void Qtile::toStringCpp()
@@ -13,6 +15,15 @@ void Qtile::toStringCpp()
     text = "Vous avez appuyé : "+QString::number(compteur,'f',0)+" fois sur le bouton";
     emit changementCPP(text);
     //qDebug() << "Hello World!";
+}
+
+void Qtile::restartGame()
+{
+    currentGame->restartGame();
+    gameIsWon = false;
+    gameIsOver = false;
+    emit ChangeWinStatus();
+    emit ChangeOverStatus();
 }
 
 QString Qtile::readValue(int index)
@@ -64,19 +75,12 @@ void Qtile::performMove(int direction)
     if (direction == 4){
         currentGame->move(RIGHT);
     }
-    qDebug()<< "Je bouge";
-    qDebug()<< direction;
-}
-
-
-bool Qtile::GameIsWon()
-{
     gameIsWon = currentGame->isGameWon();
-    return gameIsWon;
-}
+    if (gameIsWon) emit ChangeWinStatus();
 
-bool Qtile::GameIsLost()
-{
-    gameIsLost = currentGame->isGameOver();
-    return gameIsLost;
+    gameIsOver = currentGame->isGameOver();
+    if (gameIsOver)
+    {
+        emit ChangeOverStatus();
+    }
 }

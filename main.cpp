@@ -10,21 +10,19 @@
 #include "qtile.h"
 
 
-
 int main(int argc, char *argv[])
 {
     srand(time(NULL));
 
-    Game game(4, 4);
-    Game* gamePtr = &game;
-
-    game.restartGame();
+    //Game game(4, 4);
+    //Game* gamePtr = &game;
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
     Qtile aQtile;
-    aQtile.setCurrentGame(gamePtr);
+
+    aQtile.restartGame();
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

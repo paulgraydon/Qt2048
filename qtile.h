@@ -10,35 +10,29 @@
 #include "board.h"
 #include "tile.h"
 
-
-
 class Qtile: public QObject
 {
     Q_OBJECT
 
     bool gameIsWon;
-    bool gameIsLost;
+    bool gameIsOver;
     Q_PROPERTY(bool gameIsWon READ GameIsWon NOTIFY ChangeWinStatus)
-    Q_PROPERTY(bool gameIsLost READ GameIsLost NOTIFY ChangeLoseStatus)
-
+    Q_PROPERTY(bool gameIsOver READ GameIsOver NOTIFY ChangeOverStatus)
 
 public:
     explicit Qtile(QObject *parent = nullptr);
 
     //Q_INVOKABLE void toStringCpp();
     void setCurrentGame(Game* newGame) {currentGame = newGame;}
-
+    Q_INVOKABLE void restartGame();
     Q_INVOKABLE QString readValue(int index);
     Q_INVOKABLE void performMove(int direction);
     Q_INVOKABLE QColor readColor(int index);
 
-    bool GameIsWon();
-    bool GameIsLost();
-
 signals:
     void changementCPP(QString text);
     void ChangeWinStatus();
-    void ChangeLoseStatus();
+    void ChangeOverStatus();
 
 public slots:
     void toStringCpp();
@@ -46,6 +40,7 @@ public slots:
 private:
     QString text;
     int compteur = 0;
+    Game* currentGame;
 
 //signals:
 
@@ -64,10 +59,7 @@ signals:
 private:
     Tile* tileassociee;
     //QColor color;
-    int value;*/
-
-private:
-    Game* currentGame;
+    int value;*/ 
 
 };
 

@@ -32,9 +32,6 @@ void Game::move(Direction dir)
     if (!gameBoard->canMove())
     {
         gameOver = true;
-        bool gameWon = isGameWon();
-        if (gameWon) emit ChangeWinStatus();
-        else emit ChangeLoseStatus();
     }
 }
 
