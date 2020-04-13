@@ -28,6 +28,7 @@ public:
     Q_INVOKABLE QString readValue(int index);
     Q_INVOKABLE void performMove(int direction);
     Q_INVOKABLE QColor readColor(int index);
+    Q_INVOKABLE QString getScore();
 
     bool GameIsWon();
     bool GameIsOver();
