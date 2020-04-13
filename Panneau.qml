@@ -9,35 +9,6 @@ Rectangle {
 
     radius: 3;
 
-    /*Connections
-        {
-            target:vueObjetCpt
-            onChangementCPP:
-            {
-                affichageCpp.text = text;
-            }
-        }
-
-    Button {
-            id: button1
-            x: 50
-            y: 193
-            text: vueObjetCpt.cptQML
-            onClicked:
-            {
-                vueObjetCpt.toStringCpp();
-            }
-        }
-
-    Text {
-            id: affichageCpp
-            x: 177
-            y: 245
-            text: qsTr("Text")
-            font.pixelSize: 12
-        }*/
-
-
     anchors {
         right: parent.right; rightMargin: 5
         left: parent.left; leftMargin: 5
@@ -58,6 +29,8 @@ Rectangle {
                 num: index
                 width: grid.width / grid.columns;
                 height: grid.height / grid.rows;
+
+
             }
         }
     }
@@ -75,6 +48,10 @@ Rectangle {
                     PropertyChanges {   target: gamewon; visible:false; opacity: 0.0    }
                 }
             ]
+        transitions: Transition {
+            NumberAnimation { property: "opacity"; duration: 500}
+        }
+
     }
 
     Lose{
@@ -91,6 +68,9 @@ Rectangle {
                PropertyChanges {   target: gamelost; visible:false; opacity: 0.0    }
             }
         ]
+        transitions: Transition {
+            NumberAnimation { property: "opacity"; duration: 500}
+        }
     }
 
     Tempwin{
@@ -105,6 +85,9 @@ Rectangle {
                     PropertyChanges {   target: gametempwin; visible:false; opacity: 0.0    }
                 }
             ]
+        transitions: Transition {
+            NumberAnimation { property: "opacity"; duration: 500}
+        }
     }
 
 
