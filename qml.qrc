@@ -6,5 +6,6 @@
         <file>Commande.qml</file>
         <file>Win.qml</file>
         <file>Lose.qml</file>
+        <file>Tempwin.qml</file>
     </qresource>
 </RCC>

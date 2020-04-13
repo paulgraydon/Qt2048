@@ -84,3 +84,14 @@ void Qtile::performMove(int direction)
         emit ChangeOverStatus();
     }
 }
+
+
+bool Qtile::GameIsWon()
+{
+    return gameIsWon;
+}
+
+bool Qtile::GameIsOver()
+{
+    return gameIsOver;
+}

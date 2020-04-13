@@ -29,6 +29,9 @@ public:
     Q_INVOKABLE void performMove(int direction);
     Q_INVOKABLE QColor readColor(int index);
 
+    bool GameIsWon();
+    bool GameIsOver();
+
 signals:
     void changementCPP(QString text);
     void ChangeWinStatus();

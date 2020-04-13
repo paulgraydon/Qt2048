@@ -12,7 +12,7 @@ Rectangle
         id: textwin
         anchors.fill: parent
         color: "#766d65"
-        text: qsTr("FIN DE PARTIE !")
+        text: qsTr("VOUS AVEZ GAGNÉ !")
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         font.family: "Verdana"

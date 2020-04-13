@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
+ import QtQuick 2.14
 
 Rectangle {
     id: jeu
@@ -64,13 +65,54 @@ Rectangle {
 
     Win{
         id:gamewon
-        visible:false
+
+        opacity: 0.0
+        states: [
+                State { when: vueObjetCpt.gameIsWon & vueObjetCpt.gameIsOver;
+                    PropertyChanges {   target: gamewon; visible:true; opacity: 0.8    }
+                },
+                State { when: !vueObjetCpt.gameIsWon & !vueObjetCpt.gameIsOver;
+                    PropertyChanges {   target: gamewon; visible:false; opacity: 0.0    }
+                }
+            ]
     }
 
     Lose{
         id:gamelost
-        visible:false
+
+        opacity: 0.0
+
+        states: [
+             State { when: !vueObjetCpt.gameIsWon & vueObjetCpt.gameIsOver;
+                PropertyChanges {   target: gamelost; visible:true; opacity: 0.8    }
+            },
+
+            State { when: !vueObjetCpt.gameIsWon & !vueObjetCpt.gameIsOver;
+               PropertyChanges {   target: gamelost; visible:false; opacity: 0.0    }
+            }
+        ]
     }
+
+    Tempwin{
+        id:gametempwin
+
+        opacity: 0.0
+        states: [
+                State { when: vueObjetCpt.gameIsWon & !vueObjetCpt.gameIsOver;
+                    PropertyChanges {   target: gametempwin; visible:true; opacity: 0.8    }
+                },
+                State { when: !vueObjetCpt.gameIsWon & !vueObjetCpt.gameIsOver;
+                    PropertyChanges {   target: gametempwin; visible:false; opacity: 0.0    }
+                }
+            ]
+    }
+
+
+
+
+
+
+
 
 }
 
