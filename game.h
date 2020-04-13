@@ -11,9 +11,9 @@ class Game
 public:
     Game(int rowCount = 4, int colCount = 4);
     ~Game();
-    void restartGame();
+    void restartGame(); // Reset the whole game
     Board* getGameBoard() const {return gameBoard;}
-    void move(Direction dir);
+    void move(Direction dir); // Perform a move in given direction UP, DOWN, LEFT or RIGHT
     int getGameScore() const {return gameScore;}
     bool isGameOver(){return gameOver;}
     bool isGameWon();

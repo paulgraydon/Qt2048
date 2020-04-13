@@ -26,8 +26,8 @@ public:
     Tile* getTile(int row, int col);
     QString getTileValue(int tileIndex); // Return tile value by index, under form of a QString
     int getTileValueForColor(int tileIndex);
-    void move(Direction dir);
-    bool isFull() const;
+    void move(Direction dir); // Perform move in given direction
+    bool isFull() const; // Check if the board is full
     int getPointsScoredLastMove() const {return pointsScoredLastMove;}
     bool getTileCollisionLastMove() const {return tileCollisionLastMove;}
     bool canMove() const;
@@ -48,7 +48,7 @@ private:
     void moveHorizontally(int row, int col, Direction dir);
     void handleCollision(int collRow, int collCol); // Handle collision of two tiles
     bool changedState(Board& otherBoard) const; // Check if board is different from the argument board
-    void endCurrentMove(); // Reset some parameters before next move
+    void endCurrentMove(); // Reset some parameters before the next move
 };
 
 #endif // BOARD_H

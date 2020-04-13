@@ -11,7 +11,7 @@ public:
 
     int getValue() {return value;}
     void setValue(int newValue) {value = newValue;}
-    void upgradeTile() {value *= VALUE_MULTIPLIER;}
+    void upgradeTile() {value *= VALUE_MULTIPLIER;} // Upgrade the tile's value
     void setUpgradedThisMove(bool newBool) {this->upgradedThisMove = newBool;}
     bool getUpgradedThisMove() const {return this->upgradedThisMove;}
 
