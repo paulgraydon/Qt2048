@@ -3,7 +3,7 @@ import QtQuick 2.14
 
 Rectangle {
     id: newgame
-    width: 130
+    width: parent.width/2
     height: 30
     color: "#bbada0"
     //color: "#8c7963"
@@ -11,7 +11,7 @@ Rectangle {
 
     anchors {
         right: parent.right; rightMargin: 5
-        top: parent.top; topMargin: 5
+        top: parent.top; topMargin: 40
     }
 
     Text {

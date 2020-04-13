@@ -5,32 +5,31 @@ Rectangle
     id: scorecourant
     color: "#ccc0b2"
     visible: true
-
+    width: parent.width/2
+    height: 30
     radius: 3
-    anchors.rightMargin: 20
-    //anchors.leftMargin: 4
-    //anchors.bottomMargin: 4
-    anchors.topMargin: 5
+
+    anchors {
+        right: parent.right; rightMargin: 5
+        top: parent.top; topMargin: 5
+    }
 
     Text
     {
         id: scoreaffichage
-        x: 30
-        y: 30
-
-        text: "score"//vueObjetCpt.
-
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.fill: parent
+        text: "Score : " + vueObjetCpt.getScore()
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
         font.bold: true
-        font.family: "Tahoma"
-        font.pixelSize: 24
+        font.family: "Verdana"
+        font.pixelSize: 16
     }
 
 
-    /*function scoreUpdate()
+    function scoreUpdate()
     {
-        //scoreaffichage.text = vueObjetCpt.
+        scoreaffichage.text = "Score : " + vueObjetCpt.getScore()
     }
 
     Connections
@@ -40,7 +39,7 @@ Rectangle
         {
             scoreUpdate();
         }
-    }*/
+    }
 }
 
 

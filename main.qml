@@ -15,6 +15,7 @@ Window {
     visible: true
     width: 300
     height: 400
+    color: "#efe9e9"
     title: qsTr("2048")
 
     signal update()
@@ -47,12 +48,10 @@ Window {
         }
     }
 
-    ScoreCourant{
-        id : scorecourant
-    }
 
-    NouvellePartie{
-        id: newgame
+
+    Commande{
+        id: panneaucommande
     }
 
 }
