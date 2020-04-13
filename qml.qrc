@@ -8,5 +8,6 @@
         <file>Lose.qml</file>
         <file>Tempwin.qml</file>
         <file>NouvellePartie.qml</file>
+        <file>ScoreCourant.qml</file>
     </qresource>
 </RCC>

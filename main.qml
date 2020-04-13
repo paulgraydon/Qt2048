@@ -47,8 +47,8 @@ Window {
         }
     }
 
-    Commande{
-        id : panneaucommande
+    ScoreCourant{
+        id : scorecourant
     }
 
     NouvellePartie{
