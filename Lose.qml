@@ -1,5 +1,6 @@
 import QtQuick 2.0
 
+// Affichage lorsque le jeu est perdu
 Rectangle
 {
     id: gamelost
@@ -8,6 +9,7 @@ Rectangle
     radius: 3
     opacity: 0.7
 
+    // Zone de texte
     Text {
         id: textlost
         anchors.fill: parent

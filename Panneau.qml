@@ -1,8 +1,10 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
- import QtQuick 2.14
+import QtQuick 2.14
 
+// Panneau de jeu
 Rectangle {
+    // Rectangle de fond du panneau
     id: jeu
     property int col: 4
     property int row: 4
@@ -17,6 +19,7 @@ Rectangle {
     }
     color: "#bbada0"
 
+    // Grille des cases du jeu
     Grid {
         id: grid
         anchors.fill: parent;
@@ -25,6 +28,7 @@ Rectangle {
         Repeater {
             model: grid.columns * grid.rows;
 
+            // Case de la grille
             Case {
                 num: index
                 width: grid.width / grid.columns;
@@ -36,6 +40,7 @@ Rectangle {
     }
 
 
+    // Affichage lorsque le jeu est gagné et qu'il n'y a plus de coups possibles
     Win{
         id:gamewon
 
@@ -54,6 +59,7 @@ Rectangle {
 
     }
 
+    // Affichage lorsque le jeu est perdu
     Lose{
         id:gamelost
 
@@ -73,6 +79,7 @@ Rectangle {
         }
     }
 
+    // Affichage lorsque le jeu est gagné et qu'il est possible de continuer
     Tempwin{
         id:gametempwin
 
@@ -89,13 +96,6 @@ Rectangle {
             NumberAnimation { property: "opacity"; duration: 500}
         }
     }
-
-
-
-
-
-
-
 
 }
 

@@ -1,13 +1,14 @@
 import QtQuick 2.0
 
-Rectangle
-{
+// Case de la grille de jeu
+Rectangle{
     id: creationcase
     color: "transparent"
     visible: true
 
     property int num ;
 
+    // Rectangle de texte
     Rectangle
     {
         id: fondcase
@@ -19,6 +20,7 @@ Rectangle
         anchors.bottomMargin: 4
         anchors.topMargin: 4
 
+        // Zone de texte pour afficher le nombre de la case
         Text
         {
             id: casenum
@@ -36,12 +38,14 @@ Rectangle
 
     }
 
+    // Fonction pour mettre à jour la couleur et la valeur de la case
     function caseUpdate()
     {
         casenum.text = vueObjetCpt.readValue(num)
         fondcase.color = vueObjetCpt.readColor(num)
     }
 
+    // Lien avec la partie logique pour la mise à jour de la case
     Connections
     {
         target: window

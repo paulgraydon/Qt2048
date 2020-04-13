@@ -1,5 +1,6 @@
 import QtQuick 2.0
 
+// Espace de commande du jeu
 Rectangle {
     id: panneaucommande
 
@@ -13,6 +14,7 @@ Rectangle {
         top: parent.top; topMargin: 5
     }
 
+    // Espace d'affichage du titre
     Rectangle {
         id: titre
         width: 80
@@ -25,6 +27,7 @@ Rectangle {
             top: parent.top; topMargin: 5
         }
 
+        // Zone de texte
         Text {
 
             anchors.fill: parent
@@ -39,10 +42,12 @@ Rectangle {
 
     }
 
+    // Espace d'affichage du score
     ScoreCourant{
         id : scorecourant
     }
 
+    // Espace d'affichage du bouton NouvellePartie
     NouvellePartie{
         id: newgame
     }

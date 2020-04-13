@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick 2.14
 
+// Bouton Nouvelle Partie
 Rectangle {
     id: newgame
     width: parent.width/2
@@ -14,6 +15,7 @@ Rectangle {
         top: parent.top; topMargin: 40
     }
 
+    // Zone de texte
     Text {
 
         anchors.fill: parent
@@ -26,6 +28,7 @@ Rectangle {
         font.pixelSize: 12
     }
 
+    // Espace où l'utilisateur peut cliquer pour lancer une nouvelle partie
     MouseArea {
         id: newgamemouseArea
         anchors.fill: parent;

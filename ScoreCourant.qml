@@ -1,5 +1,6 @@
 import QtQuick 2.0
 
+// Affichage du score
 Rectangle
 {
     id: scorecourant
@@ -14,6 +15,7 @@ Rectangle
         top: parent.top; topMargin: 5
     }
 
+    // Zone de texte
     Text
     {
         id: scoreaffichage
@@ -26,12 +28,13 @@ Rectangle
         font.pixelSize: 16
     }
 
-
+    // fonction permettant de mettre à jour l'affichage du score
     function scoreUpdate()
     {
         scoreaffichage.text = "Score : " + vueObjetCpt.getScore()
     }
 
+    // Lien avec la partie logique du programme
     Connections
     {
         target: window

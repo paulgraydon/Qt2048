@@ -22,7 +22,6 @@ void Game::restartGame()
 void Game::move(Direction dir)
 {
     // Perform move on the board
-    qDebug() << "Dans Game::move";
     gameBoard->move(dir);
 
     // Update score if there was a tile collision this move

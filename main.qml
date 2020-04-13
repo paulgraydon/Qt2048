@@ -9,7 +9,7 @@ import QtQuick.Window 2.2
 import Qt.labs.settings 1.0
 import QtQuick 2.14
 
-
+// Fenetre d'affichage du jeu
 Window {
     id: window
     visible: true
@@ -18,15 +18,16 @@ Window {
     color: "#efe9e9"
     title: qsTr("2048")
 
-    signal update()
+    signal update() // Mise à jour de l'affichage
 
+    // Panneau de jeu
     Panneau {
         id: jeu
         visible: true
         focus: true
 
+        // Actions lors des commandes des touches du clavier
         Keys.onPressed: {
-
             switch (event.key) {
             case Qt.Key_Up:
                 vueObjetCpt.performMove(1);
@@ -49,7 +50,7 @@ Window {
     }
 
 
-
+    // Panneau de commande du jeu
     Commande{
         id: panneaucommande
     }

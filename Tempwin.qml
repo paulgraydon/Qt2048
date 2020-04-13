@@ -1,5 +1,6 @@
 import QtQuick 2.0
 
+// Affichage lorsque le jeu est gagné et qu'il est possible de continuer à jouer
 Rectangle
 {
     id: gamewon
@@ -8,6 +9,7 @@ Rectangle
     radius: 3
     opacity: 0.7
 
+    // Zone de texte
     Text {
         id: textwin
         anchors.fill: parent

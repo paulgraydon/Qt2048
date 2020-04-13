@@ -4,19 +4,13 @@
 
 #include "game.h"
 
+// Constructeur de Qtile
 Qtile::Qtile(QObject *parent) : QObject(parent)
 {
     currentGame = new Game;
 }
 
-void Qtile::toStringCpp()
-{
-    compteur++;
-    text = "Vous avez appuyé : "+QString::number(compteur,'f',0)+" fois sur le bouton";
-    emit changementCPP(text);
-    //qDebug() << "Hello World!";
-}
-
+// Lancement d'une nouvelle partie
 void Qtile::restartGame()
 {
     currentGame->restartGame();
@@ -26,13 +20,14 @@ void Qtile::restartGame()
     emit ChangeOverStatus();
 }
 
+// Renvoie le nombre contenu dans une case sous forme de QString pour l'affichage
 QString Qtile::readValue(int index)
 {
     QString qValue = currentGame->getGameBoard()->getTileValue(index);
     return (qValue);
 }
 
-
+// Renvoie la couleur à afficher dans une case selon la valeur qu'elle contient
 QColor Qtile::readColor(int index)
 {
     int valueForColor = currentGame->getGameBoard()->getTileValueForColor(index);
@@ -59,16 +54,16 @@ QColor Qtile::readColor(int index)
     return color;
 }
 
+// Renvoie le score pour l'afficher
 QString Qtile::getScore()
 {
     int gameScore = currentGame->getGameScore();
     return (QString::number(gameScore));
 }
 
+// Effectue un mouvement de case selon la direction du mouvement
 void Qtile::performMove(int direction)
 {
-    qDebug()<< "Je bouge";
-    qDebug()<< direction;
     if (direction == 1){
         currentGame->move(UP);
     }
@@ -91,12 +86,13 @@ void Qtile::performMove(int direction)
     }
 }
 
-
+// Renvoie la variable qui permet de savoir si le jeu est gagné (2048 est atteint)
 bool Qtile::GameIsWon()
 {
     return gameIsWon;
 }
 
+// Renvoie la variable qui permet de savoir si le jeu est fini( plus de coups possibles)
 bool Qtile::GameIsOver()
 {
     return gameIsOver;

@@ -298,9 +298,7 @@ int Board::getTileValueForColor(int tileIndex)
 
 void Board::move(Direction dir)
 {
-    qDebug()<< "Dans Board::move";
     Board boardCopy(*this);
-    qDebug()<< "Dans Board::move après copie";
     endCurrentMove();
 
     switch (dir) {
