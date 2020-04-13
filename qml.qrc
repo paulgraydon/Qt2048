@@ -7,5 +7,6 @@
         <file>Win.qml</file>
         <file>Lose.qml</file>
         <file>Tempwin.qml</file>
+        <file>NouvellePartie.qml</file>
     </qresource>
 </RCC>

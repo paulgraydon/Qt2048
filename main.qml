@@ -51,6 +51,8 @@ Window {
         id : panneaucommande
     }
 
-
+    NouvellePartie{
+        id: newgame
+    }
 
 }
