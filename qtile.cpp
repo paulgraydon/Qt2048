@@ -59,6 +59,12 @@ QColor Qtile::readColor(int index)
     return color;
 }
 
+QString Qtile::getScore()
+{
+    int gameScore = currentGame->getGameScore();
+    return (QString::number(gameScore));
+}
+
 void Qtile::performMove(int direction)
 {
     qDebug()<< "Je bouge";
